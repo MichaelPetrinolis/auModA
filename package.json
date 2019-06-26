@@ -49,7 +49,7 @@
   "scripts": {
     "build": "au build-plugin --env prod",
     "start": "au run",
-    "watch": "au build-plugin --watch",
+    "watch": "au build-plugin --watch --env prod",
     "prepare": "npm run build",
     "pretest": "au lint",
     "preversion": "au test",

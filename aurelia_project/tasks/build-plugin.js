@@ -1,13 +1,27 @@
 import gulp from 'gulp';
 import del from 'del';
-import {pluginMarkup} from './process-markup';
-import {pluginCSS} from './process-css';
-import {pluginJson} from './process-json';
-import {buildPluginJavaScript} from './transpile';
-import { CLIOptions } from 'aurelia-cli';
+import {
+  pluginMarkup
+} from './process-markup';
+import {
+  pluginCSS
+} from './process-css';
+import {
+  pluginJson
+} from './process-json';
+import {
+  buildPluginJavaScript
+} from './transpile';
+import {
+  CLIOptions
+} from 'aurelia-cli';
 
 function clean() {
-  return del(['dist/**', '!dist']);
+  if (CLIOptions.hasFlag('watch')) {
+    return Promise.resolve()
+  } else {
+    return del('dist');
+  }
 }
 
 let build = gulp.series(
@@ -33,7 +47,9 @@ let main;
 if (CLIOptions.hasFlag('watch')) {
   main = function () {
     console.log('Watching plugin sources for changes ...');
-    return gulp.watch('src/**/*', { ignoreInitial: false }, build);
+    return gulp.watch('src/**/*', {
+      ignoreInitial: false
+    }, build);
   }
 } else {
   main = function () {
@@ -42,4 +58,7 @@ if (CLIOptions.hasFlag('watch')) {
   }
 }
 
-export { main as default };
+export {
+  main as
+  default
+};
