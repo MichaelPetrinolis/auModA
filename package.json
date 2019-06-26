@@ -47,9 +47,9 @@
     "babel-jest": "^24.5.0"
   },
   "scripts": {
-    "build": "au build-plugin --env prod",
+    "build": "au build-plugin",
     "start": "au run",
-    "watch": "au build-plugin --watch --env prod",
+    "watch": "au build-plugin --watch",
     "prepare": "npm run build",
     "pretest": "au lint",
     "preversion": "au test",
