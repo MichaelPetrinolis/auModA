@@ -1,10 +1,7 @@
 import {
-  bindable,
-  inlineView
+  bindable
 } from 'aurelia-framework';
 
-
-@inlineView('<template>Hello from the inline view</template>')
-export class HelloWorldACustomElement {
+export class HelloWorldA {
   @bindable message = '';
 }
