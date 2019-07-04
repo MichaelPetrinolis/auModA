@@ -12,15 +12,5 @@
       "kind": "build",
       "isDefault": true
     }
-  },{
-    "type": "npm",
-    "script": "start",
-    "problemMatcher": [
-      "$eslint-stylish"
-    ],
-    "group": {
-      "kind": "build",
-      "isDefault": true
-    }
   }]
 }
